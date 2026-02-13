@@ -1,0 +1,21 @@
+{
+  "name": "x402-kit-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "x402-kit: Autonomous Agent Payments on Stacks",
+  "workspaces": [
+    "packages/*",
+    "examples/*",
+    "cli"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2"
+  }
+}
