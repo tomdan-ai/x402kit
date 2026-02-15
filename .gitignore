@@ -1,1 +1,29 @@
-node_modules/\ndist/\n.DS_Store\n.env
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment & secrets
+.env
+.env.*
+.npmrc
+
+# npm pack output
+*.tgz
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/

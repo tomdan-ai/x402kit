@@ -1,25 +1,41 @@
 import { Request, Response, NextFunction } from 'express';
+import { paymentMiddleware, STXtoMicroSTX } from 'x402-stacks';
 
-interface X402Options {
+export interface X402Options {
   prices: Record<string, string>;
+  payTo: string;
+  network?: 'mainnet' | 'testnet';
+  facilitatorUrl?: string;
 }
 
+/**
+ * x402Paywall middleware for Express.
+ * Protects routes based on the provided prices map.
+ */
 export function x402Paywall(options: X402Options) {
+  const { prices, payTo, network = 'testnet', facilitatorUrl = 'https://facilitator.stacksx402.xyz' } = options;
+
+  // Pre-calculate microSTX prices to avoid parsing on every request
+  const microPrices: Record<string, string | bigint> = {};
+  for (const [path, priceStr] of Object.entries(prices)) {
+    const amount = parseFloat(priceStr.split(' ')[0]);
+    microPrices[path] = STXtoMicroSTX(amount);
+  }
+
   return (req: Request, res: Response, next: NextFunction) => {
-    // TODO: Implement payment logic
-    // Checks if the request path is in the prices map
-    // If so, verify payment
-    // If payment valid, call next()
-    // Else return 402 with X-402 headers
-    
-    // Placeholder implementation
-    const price = options.prices[req.path];
-    if (price) {
-        console.log(`Checking payment for ${req.path}: ${price}`);
-        // Mock check for now
-        next();
-    } else {
-        next();
+    const amount = microPrices[req.path];
+
+    if (amount !== undefined) {
+      // Use x402-stacks paymentMiddleware for the specific amount
+      return paymentMiddleware({
+        amount,
+        payTo,
+        network,
+        facilitatorUrl
+      })(req, res, next);
     }
+
+    // No price defined for this route, proceed
+    next();
   };
 }

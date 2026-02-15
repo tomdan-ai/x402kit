@@ -1,0 +1,60 @@
+{
+    "name": "@x402-kit/cli",
+    "version": "0.1.0",
+    "description": "CLI scaffold tool for x402-kit — generate Express APIs and autonomous agent projects with built-in HTTP 402 payment gating on Stacks",
+    "license": "MIT",
+    "author": "x402-kit contributors",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/x402-kit/x402-kit.git",
+        "directory": "cli"
+    },
+    "homepage": "https://github.com/x402-kit/x402-kit#readme",
+    "bugs": {
+        "url": "https://github.com/x402-kit/x402-kit/issues"
+    },
+    "keywords": [
+        "x402",
+        "stacks",
+        "http-402",
+        "payments",
+        "scaffold",
+        "cli",
+        "api-monetization",
+        "micropayments",
+        "web3",
+        "blockchain",
+        "agent",
+        "autonomous-agent"
+    ],
+    "engines": {
+        "node": ">=18"
+    },
+    "bin": {
+        "x402-kit": "dist/index.js"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "prepublishOnly": "npm run build"
+    },
+    "dependencies": {
+        "commander": "^11.1.0",
+        "fs-extra": "^11.2.0",
+        "chalk": "^4.1.2",
+        "prompts": "^2.4.2"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@types/node": "^20.11.0",
+        "@types/prompts": "^2.4.9",
+        "typescript": "^5.3.3"
+    }
+}

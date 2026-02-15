@@ -1,21 +1,27 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
+import { wrapAxiosWithPayment } from 'x402-stacks';
 
+/**
+ * X402Agent represents an autonomous agent capable of making paid API calls.
+ * It automatically handles 402 Payment Required responses.
+ */
 export class X402Agent {
-  constructor(private wallet: any) {}
+  private api: AxiosInstance;
 
-  async call(url: string, data: any) {
-    try {
-      const response = await axios.post(url, data);
-      return response.data;
-    } catch (error: any) {
-      if (error.response && error.response.status === 402) {
-        // TODO: Handle 402 Payment Required
-        console.log('Payment Required (402) detected');
-        // 1. Parse payment details from headers
-        // 2. Make payment using wallet
-        // 3. Retry request with proof
-      }
-      throw error;
-    }
+  constructor(public account: any) {
+    this.api = wrapAxiosWithPayment(axios.create(), account);
+  }
+
+  /**
+   * High-level method to make a request to a paid API.
+   * Payment and retries are handled automatically by the wrapped axios instance.
+   */
+  async call(url: string, data?: any, method: 'get' | 'post' = 'post') {
+    const response = await this.api.request({
+      url,
+      method,
+      data,
+    });
+    return response.data;
   }
 }
