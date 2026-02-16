@@ -46,7 +46,7 @@ function TerminalDemo({ walletAddress }: { walletAddress: string | null }) {
           <div className="terminal-dot" style={{ background: '#ef4444' }}></div>
           <div className="terminal-dot" style={{ background: '#fbbf24' }}></div>
           <div className="terminal-dot" style={{ background: '#10b981' }}></div>
-          <span style={{ marginLeft: '1rem', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>x402-kit-agent-sim</span>
+          <span style={{ marginLeft: '1rem', color: 'var(--text-secondary)', fontSize: '0.8rem' }}>x402kit-agent-sim</span>
         </div>
         <div style={{ flex: 1, overflowY: 'auto' }}>
           {lines.map((line, i) => (
@@ -71,7 +71,7 @@ function ConnectWallet({ onConnect, walletAddress, userSession }: { onConnect: (
   const handleConnect = () => {
     authenticate({
       appDetails: {
-        name: 'x402-kit',
+        name: 'x402kit',
         icon: window.location.origin + '/favicon.svg',
       },
       userSession: userSession as any,
@@ -129,7 +129,7 @@ function App() {
   }, [userSession]);
 
   const copyCommand = () => {
-    navigator.clipboard.writeText('npx x402-kit init my-project');
+    navigator.clipboard.writeText('npx x402kit init my-project');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -140,7 +140,7 @@ function App() {
       <nav style={{ padding: '1rem 0', position: 'sticky', top: 0, backdropFilter: 'blur(10px)', zIndex: 100, borderBottom: '1px solid var(--glass-border)' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ fontWeight: 'bold', fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span style={{ color: 'var(--accent-primary)' }}>◆</span> x402-kit
+            <span style={{ color: 'var(--accent-primary)' }}>◆</span> x402kit
           </div>
           <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
             <a href="#features">Features</a>
@@ -170,7 +170,7 @@ function App() {
 
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '4rem' }}>
             <div className="glass-card" style={{ padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer' }} onClick={copyCommand}>
-              <code style={{ background: 'transparent', fontSize: '1.1rem', color: '#60a5fa' }}>$ npx x402-kit init</code>
+              <code style={{ background: 'transparent', fontSize: '1.1rem', color: '#60a5fa' }}>$ npx x402kit init</code>
               <span style={{ color: 'var(--text-secondary)' }}>{copied ? 'Copied' : '📋'}</span>
             </div>
             <a href="#demo" className="btn btn-primary" style={{ height: '54px' }}>Try the Demo</a>
@@ -220,10 +220,10 @@ function App() {
         <div className="container">
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Ready for Production?</h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
-            Read the guide on how to deploy x402-kit and start monetizing your services today.
+            Read the guide on how to deploy x402kit and start monetizing your services today.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <a href="https://github.com/Start-hack/x402-kit" className="btn btn-primary" target="_blank" rel="noreferrer">
+            <a href="https://github.com/tomdan-ai/x402kit" className="btn btn-primary" target="_blank" rel="noreferrer">
               Check GitHub
             </a>
             <a href="#demo" className="btn btn-secondary">Read Docs</a>
@@ -233,7 +233,7 @@ function App() {
 
       <footer style={{ padding: '3rem 0', textAlign: 'center', color: 'var(--text-secondary)', borderTop: '1px solid var(--glass-border)' }}>
         <div className="container">
-          <div style={{ marginBottom: '1rem', fontWeight: 600, color: 'white' }}>x402-kit</div>
+          <div style={{ marginBottom: '1rem', fontWeight: 600, color: 'white' }}>x402kit</div>
           <div>&copy; 2026. Built with ❤️ for the Stacks Ecosystem.</div>
         </div>
       </footer>
