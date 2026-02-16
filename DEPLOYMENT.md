@@ -1,10 +1,10 @@
-# Deploying & Using x402-kit 🚀
+# Deploying & Using x402kit 🚀
 
-This guide explains how to use `x402-kit` in your own projects, whether you're developing locally or ready for production.
+This guide explains how to use `x402kit` in your own projects, whether you're developing locally or ready for production.
 
 ## 1. Local Development (Testing the CLI)
 
-To use the `x402-kit` CLI globally on your machine without publishing to npm:
+To use the `x402kit` CLI globally on your machine without publishing to npm:
 
 ```bash
 # 1. Build the monorepo
@@ -18,19 +18,19 @@ npm link
 
 # 4. Now you can use it anywhere!
 mkdir my-new-app && cd my-new-app
-x402-kit init
+x402kit init
 ```
 
 ## 2. Using Packages Locally
 
-If you want to use `@x402-kit/middleware` or `@x402-kit/agent-client` in another local project:
+If you want to use `@x402kit/middleware` or `@x402kit/agent-client` in another local project:
 
 ```bash
 # In the package directory (e.g., packages/middleware)
 npm link
 
 # In your external project
-npm link @x402-kit/middleware
+npm link @x402kit/middleware
 ```
 
 ## 3. Publishing to npm
@@ -43,9 +43,9 @@ When you're ready to share your tools with the world:
     ./publish-all.sh
     ```
     This script will build all packages and publish them in the correct dependency order:
-    1. `@x402-kit/middleware`
-    2. `@x402-kit/agent-client`
-    3. `@x402-kit/cli`
+    1. `@x402kit/middleware`
+    2. `@x402kit/agent-client`
+    3. `@x402kit/cli`
 
 Alternatively, you can publish manually:
     ```bash
@@ -60,10 +60,10 @@ Alternatively, you can publish manually:
 ## 4. Real-World Integration Example
 
 ### Backend (API Provider)
-1. Install: `npm install @x402-kit/middleware`
+1. Install: `npm install @x402kit/middleware`
 2. Usage:
 ```typescript
-import { x402Paywall } from '@x402-kit/middleware';
+import { x402Paywall } from '@x402kit/middleware';
 
 app.use(x402Paywall({
   prices: { '/api/data': '0.1 STX' },
@@ -72,10 +72,10 @@ app.use(x402Paywall({
 ```
 
 ### Frontend/Agent (Consumer)
-1. Install: `npm install @x402-kit/agent-client`
+1. Install: `npm install @x402kit/agent-client`
 2. Usage:
 ```typescript
-import { X402Agent } from '@x402-kit/agent-client';
+import { X402Agent } from '@x402kit/agent-client';
 
 const agent = new X402Agent(userWalletAccount);
 const data = await agent.call('https://api.com/api/data');
