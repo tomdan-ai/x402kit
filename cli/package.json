@@ -1,17 +1,17 @@
 {
-    "name": "@x402-kit/cli",
+    "name": "@x402kit/cli",
     "version": "0.1.0",
-    "description": "CLI scaffold tool for x402-kit — generate Express APIs and autonomous agent projects with built-in HTTP 402 payment gating on Stacks",
+    "description": "CLI scaffold tool for x402kit — generate Express APIs and autonomous agent projects with built-in HTTP 402 payment gating on Stacks",
     "license": "MIT",
-    "author": "x402-kit contributors",
+    "author": "x402kit contributors",
     "repository": {
         "type": "git",
-        "url": "https://github.com/x402-kit/x402-kit.git",
+        "url": "https://github.com/tomdan-ai/x402kit/tree/master/cli",
         "directory": "cli"
     },
-    "homepage": "https://github.com/x402-kit/x402-kit#readme",
+    "homepage": "https://github.com/tomdan-ai/x402kit/blob/master/cli/README.md",
     "bugs": {
-        "url": "https://github.com/x402-kit/x402-kit/issues"
+        "url": "https://github.com/tomdan-ai/x402kit/issues"
     },
     "keywords": [
         "x402",
@@ -31,7 +31,7 @@
         "node": ">=18"
     },
     "bin": {
-        "x402-kit": "dist/index.js"
+        "x402kit": "dist/index.js"
     },
     "files": [
         "dist",
