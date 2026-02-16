@@ -1,4 +1,4 @@
-import { X402Agent } from '@x402-kit/agent-client';
+import { X402Agent } from '@x402kit/agent-client';
 import { generateKeypair, privateKeyToAccount } from 'x402-stacks';
 
 async function main() {
