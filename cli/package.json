@@ -1,6 +1,6 @@
 {
     "name": "@x402kit/cli",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "CLI scaffold tool for x402kit — generate Express APIs and autonomous agent projects with built-in HTTP 402 payment gating on Stacks",
     "license": "MIT",
     "author": "x402kit contributors",
