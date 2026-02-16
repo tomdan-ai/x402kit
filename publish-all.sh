@@ -4,17 +4,17 @@ set -e
 echo "🚀 Building all packages..."
 npm run build
 
-echo "📦 Publishing @x402-kit/middleware..."
+echo "📦 Publishing @x402kit/middleware..."
 cd packages/middleware
 npm publish --access public
 cd ../..
 
-echo "📦 Publishing @x402-kit/agent-client..."
+echo "📦 Publishing @x402kit/agent-client..."
 cd packages/agent-client
 npm publish --access public
 cd ../..
 
-echo "📦 Publishing @x402-kit/cli..."
+echo "📦 Publishing @x402kit/cli..."
 cd cli
 if [ -f "package.json" ]; then
   npm publish --access public
