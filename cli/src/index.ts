@@ -8,13 +8,13 @@ import prompts from 'prompts';
 const program = new Command();
 
 program
-    .name('x402-kit')
+    .name('x402kit')
     .description('Developer experience layer for x402-stacks')
     .version('0.1.0');
 
 program
     .command('init')
-    .description('Initialize a new x402-kit project')
+    .description('Initialize a new x402kit project')
     .argument('[name]', 'Project name')
     .option('-t, --template <template>', 'Template to use (api or agent)', 'api')
     .action(async (name, options) => {
@@ -38,7 +38,7 @@ program
             process.exit(1);
         }
 
-        console.log(chalk.cyan(`Creating a new x402-kit ${template} project in ${projectPath}...`));
+        console.log(chalk.cyan(`Creating a new x402kit ${template} project in ${projectPath}...`));
 
         try {
             await fs.ensureDir(projectPath);
@@ -54,8 +54,8 @@ program
                 },
                 dependencies: {
                     'x402-stacks': 'latest',
-                    '@x402-kit/middleware': 'latest',
-                    '@x402-kit/agent-client': 'latest',
+                    '@x402kit/middleware': 'latest',
+                    '@x402kit/agent-client': 'latest',
                     'express': '^4.18.2',
                     'axios': '^1.6.5'
                 },
@@ -73,7 +73,7 @@ program
             let indexContent = '';
             if (template === 'api') {
                 indexContent = `import express from 'express';
-import { x402Paywall } from '@x402-kit/middleware';
+import { x402Paywall } from '@x402kit/middleware';
 
 const app = express();
 const port = 3000;
@@ -91,7 +91,7 @@ app.get('/data', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Welcome to your x402-kit API!');
+  res.send('Welcome to your x402kit API!');
 });
 
 app.listen(port, () => {
@@ -99,7 +99,7 @@ app.listen(port, () => {
 });
 `;
             } else {
-                indexContent = `import { X402Agent } from '@x402-kit/agent-client';
+                indexContent = `import { X402Agent } from '@x402kit/agent-client';
 import { generateKeypair, privateKeyToAccount } from 'x402-stacks';
 
 async function main() {
