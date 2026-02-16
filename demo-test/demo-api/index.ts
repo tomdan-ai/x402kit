@@ -1,5 +1,5 @@
 import express from 'express';
-import { x402Paywall } from '@x402-kit/middleware';
+import { x402Paywall } from '@x402kit/middleware';
 
 const app = express();
 const port = 3000;
@@ -17,7 +17,7 @@ app.get('/data', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Welcome to your x402-kit API!');
+  res.send('Welcome to your x402kit API!');
 });
 
 app.listen(port, () => {
