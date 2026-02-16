@@ -1,1 +1,1 @@
-# x402-kit Agent Client
+# x402kit Agent Client
