@@ -1,5 +1,5 @@
 {
-  "name": "@x402-kit/agent-client",
+  "name": "@x402kit/agent-client",
   "version": "0.1.0",
   "description": "Autonomous agent client for handling 402 payments on Stacks",
   "main": "dist/index.js",
