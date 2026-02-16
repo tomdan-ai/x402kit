@@ -1,26 +1,26 @@
-# x402-kit 🛠️
+# x402kit 🛠️
 
 **The Developer Experience Layer for Stacks API Monetization.**
 
-`x402-kit` makes it incredibly easy to add HTTP 402 (Payment Required) gating to your Express APIs and build autonomous agents that can pay for those resources.
+`x402kit` makes it incredibly easy to add HTTP 402 (Payment Required) gating to your Express APIs and build autonomous agents that can pay for those resources.
 
 ## 🌟 Features
 
-- **One-Line Middleware**: Protect your Express routes with `@x402-kit/middleware`.
-- **Autonomous Agent Client**: Pre-configured Axios wrapper in `@x402-kit/agent-client` that handles protocol negotiation and payment automatically.
-- **Scaffolding CLI**: Bootstrap your entire project in seconds with `x402-kit init`.
+- **One-Line Middleware**: Protect your Express routes with `@x402kit/middleware`.
+- **Autonomous Agent Client**: Pre-configured Axios wrapper in `@x402kit/agent-client` that handles protocol negotiation and payment automatically.
+- **Scaffolding CLI**: Bootstrap your entire project in seconds with `x402kit init`.
 - **Stacks Native**: Built on top of `x402-stacks` for seamless Bitcoin-layer payments.
 
 ## 🚀 Quick Start
 
 ### 1. Bootstrap a new project
 ```bash
-npx x402-kit init
+npx x402kit init
 ```
 
 ### 2. Protect an API route
 ```typescript
-import { x402Paywall } from '@x402-kit/middleware';
+import { x402Paywall } from '@x402kit/middleware';
 
 app.get('/premium-endpoint', x402Paywall({
   prices: { '/premium-endpoint': '1 STX' },
@@ -32,7 +32,7 @@ app.get('/premium-endpoint', x402Paywall({
 
 ### 3. Make a paid request from an Agent
 ```typescript
-import { X402Agent } from '@x402-kit/agent-client';
+import { X402Agent } from '@x402kit/agent-client';
 
 const agent = new X402Agent(walletAccount);
 const data = await agent.call('https://api.com/premium-endpoint');
