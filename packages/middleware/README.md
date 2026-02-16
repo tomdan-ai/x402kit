@@ -1,13 +1,13 @@
-# @x402-kit/middleware
+# @x402kit/middleware
 
 > One-line Express middleware for HTTP 402 payment gating on Stacks — monetize any API route with STX micropayments.
 
-[![npm version](https://img.shields.io/npm/v/@x402-kit/middleware)](https://www.npmjs.com/package/@x402-kit/middleware)
-[![license](https://img.shields.io/npm/l/@x402-kit/middleware)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/@x402kit/middleware)](https://www.npmjs.com/package/@x402kit/middleware)
+[![license](https://img.shields.io/npm/l/@x402kit/middleware)](./LICENSE)
 
 ## Overview
 
-`@x402-kit/middleware` wraps the [x402-stacks](https://www.npmjs.com/package/x402-stacks) protocol into a single Express middleware call. Define per-route STX prices in a config object, and every matching request is automatically gated behind an HTTP 402 payment flow — receipt verification, replay protection, and all.
+`@x402kit/middleware` wraps the [x402-stacks](https://www.npmjs.com/package/x402-stacks) protocol into a single Express middleware call. Define per-route STX prices in a config object, and every matching request is automatically gated behind an HTTP 402 payment flow — receipt verification, replay protection, and all.
 
 ## Installation
 
@@ -21,7 +21,7 @@ npm install @x402kit/middleware
 
 ```typescript
 import express from 'express';
-import { x402Paywall } from '@x402-kit/middleware';
+import { x402Paywall } from '@x402kit/middleware';
 
 const app = express();
 
@@ -135,13 +135,13 @@ app.use(x402Paywall({
 
 | Package | Description |
 |---------|-------------|
-| [`@x402-kit/cli`](https://www.npmjs.com/package/@x402-kit/cli) | Scaffold tool for generating x402-kit projects |
-| [`@x402-kit/agent-client`](https://www.npmjs.com/package/@x402-kit/agent-client) | Autonomous agent client that pays for API access automatically |
+| [`@x402kit/cli`](https://www.npmjs.com/package/@x402kit/cli) | Scaffold tool for generating x402kit projects |
+| [`@x402kit/agent-client`](https://www.npmjs.com/package/@x402kit/agent-client) | Autonomous agent client that pays for API access automatically |
 | [`x402-stacks`](https://www.npmjs.com/package/x402-stacks) | Core x402 protocol SDK for Stacks |
 
 ## Contributing
 
-Contributions are welcome! Please see the [main repository](https://github.com/x402-kit/x402-kit) for development setup and guidelines.
+Contributions are welcome! Please see the [main repository](https://github.com/tomdan-ai/x402kit) for development setup and guidelines.
 
 ## License
 
