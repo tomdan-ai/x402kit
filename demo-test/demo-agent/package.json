@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "x402-stacks": "latest",
-    "@x402-kit/middleware": "latest",
-    "@x402-kit/agent-client": "latest",
+    "@x402kit/middleware": "latest",
+    "@x402kit/agent-client": "latest",
     "express": "^4.18.2",
     "axios": "^1.6.5"
   },
