@@ -1,6 +1,6 @@
 {
   "name": "@x402kit/middleware",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "One-line Express middleware for HTTP 402 payment gating on Stacks — monetize any API route with STX micropayments",
   "license": "MIT",
   "author": "x402-kit contributors",
