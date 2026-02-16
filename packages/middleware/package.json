@@ -1,17 +1,17 @@
 {
-  "name": "@x402-kit/middleware",
+  "name": "@x402kit/middleware",
   "version": "0.1.0",
   "description": "One-line Express middleware for HTTP 402 payment gating on Stacks — monetize any API route with STX micropayments",
   "license": "MIT",
   "author": "x402-kit contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/x402-kit/x402-kit.git",
+    "url": "https://github.com/tomdan-ai/x402kit.git",
     "directory": "packages/middleware"
   },
-  "homepage": "https://github.com/x402-kit/x402-kit#readme",
+  "homepage": "https://github.com/tomdan-ai/x402kit/blob/master/packages/middleware/README.md",
   "bugs": {
-    "url": "https://github.com/x402-kit/x402-kit/issues"
+    "url": "https://github.com/tomdan-ai/x402kit/issues"
   },
   "keywords": [
     "x402",

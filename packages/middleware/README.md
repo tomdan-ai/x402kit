@@ -12,7 +12,7 @@
 ## Installation
 
 ```bash
-npm install @x402-kit/middleware
+npm install @x402kit/middleware
 ```
 
 > **Peer dependency:** requires `express` ≥ 4.
